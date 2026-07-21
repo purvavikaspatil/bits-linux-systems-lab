@@ -1,0 +1,16 @@
+$ gcc employee_file_manager.c -o employee_file_manager
+(compiled with no errors)
+
+$ ./employee_file_manager
+---- Initial Records ----
+[0] ID: E001       Name: Alice Sharma                     Salary: 55000.00
+[1] ID: E002       Name: Rohan Verma                      Salary: 48000.00
+[2] ID: E003       Name: Meera Iyer                        Salary: 62000.00
+
+---- After Updating Record 1 ----
+[0] ID: E001       Name: Alice Sharma                     Salary: 55000.00
+[1] ID: E002       Name: Rohan Verma                      Salary: 53000.00
+[2] ID: E003       Name: Meera Iyer                        Salary: 62000.00
+
+---- Direct Fetch of Record 2 ----
+ID: E003, Name: Meera Iyer, Salary: 62000.00
