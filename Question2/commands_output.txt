@@ -1,0 +1,21 @@
+$ gcc web_server_monitor.c -o web_server_monitor
+(compiled with no errors)
+
+$ ./web_server_monitor
+[Parent] PID 1869 starting 5 child processes
+[Child 0] PID 1870 starting, expected work time 2s
+[Child 1] PID 1871 starting, expected work time 20s
+[Child 2] PID 1872 starting, expected work time 2s
+[Child 3] PID 1873 starting, expected work time 20s
+[Child 4] PID 1874 starting, expected work time 2s
+[Child 0] PID 1870 finished work
+[Child 2] PID 1872 finished work
+[Parent] Child 0 (PID 1870) exited normally, code 0
+[Parent] Child 2 (PID 1872) exited normally, code 0
+[Child 4] PID 1874 finished work
+[Parent] Child 4 (PID 1874) exited normally, code 0
+[Parent] Child 1 (PID 1871) unresponsive after 5s - sending SIGTERM
+[Parent] Child 1 (PID 1871) killed by signal 15
+[Parent] Child 3 (PID 1873) unresponsive after 5s - sending SIGTERM
+[Parent] Child 3 (PID 1873) killed by signal 15
+[Parent] All children accounted for. Exiting.
