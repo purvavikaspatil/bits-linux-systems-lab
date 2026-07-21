@@ -1,0 +1,16 @@
+$ ./log_monitor.sh &
+[1] 2158
+
+$ echo "$(date) INFO: Server started successfully" >> application.log
+$ echo "$(date) ERROR: Database connection failed" >> application.log
+$ echo "$(date) INFO: Retrying connection" >> application.log
+$ echo "$(date) ERROR: Disk space low on /var" >> application.log
+$ echo "$(date) INFO: Request handled successfully" >> application.log
+
+$ kill %1
+
+$ cat error_report.txt
+===== Monitoring started: 2026-07-21 11:42:03 =====
+Tue Jul 21 11:42:46 UTC 2026 ERROR: Database connection failed
+Tue Jul 21 11:42:49 UTC 2026 ERROR: Disk space low on /var
+[1]+  Terminated                 ./log_monitor.sh
