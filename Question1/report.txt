@@ -1,0 +1,15 @@
+Duplicate found: ./submissions/student2_assignment.py
+Duplicate found: ./submissions/student5_assignment.py
+===================================================
+        Assignment Submission Processing Report
+===================================================
+Date            : Tue Jul 21 10:52:26 UTC 2026
+Source Directory: ./submissions
+Backup Directory: ./backup_20260721_105226
+---------------------------------------------------
+Total files processed : 5
+Duplicate files found  : 2
+Files backed up        : 3
+---------------------------------------------------
+Details of duplicates recorded above (if any).
+Error details (if any) recorded in: ./errors.log
