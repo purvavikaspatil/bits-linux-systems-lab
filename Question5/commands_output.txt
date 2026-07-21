@@ -1,0 +1,38 @@
+$ vi testconfig.txt
+(typed unsaved content: server_port = 8080, max_connections = 100)
+(did NOT save - simulating a crash before save)
+
+$ ps aux | grep vi
+purva   2281  0.0  0.1  22620 12872 pts/0  Sl+  11:47  0:00 vi testconfig.txt
+purva   2324  0.0  0.0   4128  2428 pts/2  S+   11:49  0:00 grep --color=auto vi
+
+$ kill -9 2281
+(force-killed the vi process to simulate a system crash)
+
+$ ls -la
+.testconfig.txt.swp   <- swap file confirmed present after crash
+
+$ vi testconfig.txt
+E325: ATTENTION
+Found a swap file by the name ".testconfig.txt.swp"
+        owned by: purva   dated: Tue Jul 21 11:48:01 2026
+        file name: ~purva/bits-linux-systems-lab/Question5/testconfig.txt
+        modified: YES
+        user name: purva   host name: LAPTOP-4RKHKLJN
+        process ID: 2281
+While opening file "testconfig.txt"
+(2) An edit session for this file crashed.
+    If this is the case, use ":recover" or "vim -r testconfig.txt"
+    to recover the changes (see ":help recovery").
+
+[Chose 'R' to Recover]
+
+Recovery completed. You should check if everything is OK.
+
+$ cat testconfig.txt
+server_port = 8080
+max_connections = 100
+(confirmed both unsaved lines were successfully recovered)
+
+$ :wq
+(saved the recovered content and exited vi cleanly)
